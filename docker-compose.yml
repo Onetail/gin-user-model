@@ -1,0 +1,21 @@
+version: '3'
+
+# Define services
+services:
+
+  # App Service
+  app:
+    container_name: ktalk-golang
+    build:
+      context: . # Use an image built from the specified dockerfile in the current directory.
+      dockerfile: docker/golang/Dockerfile
+    ports:
+      - "7011:7011" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+    restart: unless-stopped   
+    environment: 
+      GO_ENV: production
+    networks: # Networks to join (Services on the same network can communicate with each other using their name)
+      - ktalk
+
+networks:
+  ktalk:   

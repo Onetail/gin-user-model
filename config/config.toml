@@ -1,0 +1,15 @@
+[http_server]
+host = "0.0.0.0"
+port = 7011
+
+[database]
+type = "mysql"
+host = "0.0.0.0"
+port = 3316
+username = "root"
+password = ""
+dbname = "userModel"
+
+[token_manager]
+secret = "WHOCANINHERITEDTHEDREAM0515"
+

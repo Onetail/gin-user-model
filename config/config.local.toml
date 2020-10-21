@@ -4,10 +4,10 @@ port = 7011
 
 [database]
 type = "mysql"
-host = "0.0.0.0"
+host = "localhost"
 port = 3317
 username = "root"
-password = ""
+password = "root"
 dbname = "userModel"
 
 [token_manager]

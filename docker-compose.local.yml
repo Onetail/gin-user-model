@@ -1,0 +1,22 @@
+version: '3'
+
+# Define services
+services:
+
+  usermodel-mysql:
+    build:
+      context: .
+      dockerfile: docker/mysql/Dockerfile
+    container_name: userModel-mysql
+    command: mysqld --default-authentication-plugin=mysql_native_password --sql_mode=""
+    volumes:
+      - ./sql/userModel.sql:/docker-entrypoint-initdb.d/userModel.sql
+    security_opt:
+      - seccomp:unconfined
+    ports:
+      - "3317:3306"    
+    networks:
+      - userModel
+
+networks:
+  userModel:   

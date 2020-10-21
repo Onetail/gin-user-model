@@ -3,12 +3,12 @@ package app
 import (
 	"fmt"
 	"os"
-
 	"github.com/spf13/viper"
 )
 
 type App struct {
 	HTTPServer *HTTPServer
+	Database *Database
 }
 
 func (app *App) Init() {
@@ -26,6 +26,11 @@ func (app *App) Init() {
 	if err != nil {
 		panic(fmt.Errorf("Fatal error config file: %s", err))
 	}
+
+	app.Database = &Database{
+		app: app,
+	}
+	app.Database.Init()
 
 	app.HTTPServer = &HTTPServer{}
 	app.HTTPServer.Init(app)

@@ -32,7 +32,6 @@ func (hs *HTTPServer) Init(app *App) {
 }
 
 func (hs *HTTPServer) Start() {
-
 	log.Printf("Listening on http://%s:%d", hs.host, hs.port)
 	hs.engine.Run(hs.host + ":" + strconv.Itoa(hs.port))
 }

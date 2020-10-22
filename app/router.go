@@ -3,7 +3,6 @@ package app
 import (
 	"log"
 	"strconv"
-
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"

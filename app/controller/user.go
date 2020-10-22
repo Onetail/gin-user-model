@@ -26,5 +26,7 @@ func (u *Users) Init(server *app.HTTPServer) {
 func (u *Users) GetUsers(c *gin.Context) {
 
 
-	c.JSON(http.StatusOK, "ok")
+	c.JSON(http.StatusOK, gin.H{
+		"result": "ok",
+	})
 }
